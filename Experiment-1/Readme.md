@@ -4,7 +4,7 @@ Download Virtual Box from [here](https://www.virtualbox.org/wiki/Downloads)
 
 
 Download Vagrant from [here](https://developer.hashicorp.com/vagrant/install)
-![Download Vagrant](./images1.png)
+![Download Vagrant](./images/1.png)
 
 
 To verify the installation we will check the version via following command
@@ -18,7 +18,7 @@ Initialize Vagrant with Ubuntu box:
 ```bash
 vagrant init hashicorp/bionic64
 ```
-![Initialize](.images3.png)
+![Initialize](./images/3.png)
 
 
 Start the VM:
