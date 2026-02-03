@@ -31,14 +31,14 @@ docker stop <container_id>
 ```
 ![Stop Container](./Images/image4.png)
 
-![docker ps -a](./Images/imange5.png)
+![docker ps -a](./Images/image5.png)
 
 **Step 5: Remove Container**
 
 ```bash
 docker rm <container_id>
 ```
-![Remove Container](./Images/imange6.png)
+![Remove Container](./Images/image6.png)
 
 
 **Step 6: Remove Image**
@@ -46,7 +46,7 @@ docker rm <container_id>
 ```bash
 docker rmi nginx
 ```
-![Remove Images](./Images/imange7.png)
+![Remove Images](./Images/image7.png)
 
 
 **Result**
