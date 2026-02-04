@@ -4,7 +4,7 @@ Download Virtual Box from [here](https://www.virtualbox.org/wiki/Downloads)
 
 
 Download Vagrant from [here](https://developer.hashicorp.com/vagrant/install)
-![Download Vagrant](./Images/Image1.png)
+![Download Vagrant](./Images/image1.png)
 
 
 To verify the installation we will check the version via following command
