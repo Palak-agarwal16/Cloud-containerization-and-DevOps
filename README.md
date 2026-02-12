@@ -1,9 +1,39 @@
-This is my cloud containerization and devops learning journey...
-<hr>
+# ☁️ Cloud Containerization & DevOps Learning Journey
 
-Sap id- 500123673 <br>
-Name -Palak Agarwal
+This repository documents my hands-on learning and experiments in  
+**Cloud Computing, Containerization, and DevOps**.
 
-[Experiment-1](./LAB/Experiment-1/Readme.md) <br>
-[Experiment-2](./LAB/Experiment-2/README.md)
- 
+---
+
+### 👤 Student Details
+- **Name:** Palak Agarwal  
+- **SAP ID:** 500123673  
+
+---
+
+### 🧪 Lab Experiments
+
+- 🔹 [Experiment 1 – Docker Basics](./LAB/Experiment-1/README.md)
+- 🔹 [Experiment 2 – Nginx & Containers](./LAB/Experiment-2/README.md)
+
+---
+
+### 🚀 About This Repository
+This repository contains:
+- Practical Docker experiments  
+- Containerized applications using **Nginx**
+- DevOps fundamentals with real execution steps  
+- Clear documentation for each experiment  
+
+---
+
+### 🛠️ Tools & Technologies
+- Docker
+- Nginx
+- GitHub
+- VS Code
+- Linux / WSL
+
+---
+
+⭐ Feel free to explore the experiments and follow my learning journey!
