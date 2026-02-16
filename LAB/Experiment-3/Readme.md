@@ -3,7 +3,7 @@
 
 <hr>
 
-<h4 align="center"> Part 1: Deploy NGINX Using Official Image (Recommended Approach) <h4>
+<h4 align="center"> Part 1: Deploy NGINX Using Official Image (Recommended Approach) </h4>
 
 <hr>
 
@@ -47,7 +47,7 @@ docker images nginx
 
 <hr>
 
-<h4 align="center"> Part 2: Custom NGINX Using Ubuntu Base Image <h4>
+<h4 align="center"> Part 2: Custom NGINX Using Ubuntu Base Image </h4>
 
 <hr>
 
@@ -99,7 +99,7 @@ docker images nginx-ubuntu
 
 <hr>
 
-<h4 align="center"> Part 3: Custom NGINX Using Alpine Base Image <h4>
+<h4 align="center"> Part 3: Custom NGINX Using Alpine Base Image </h4>
 
 <hr>
 
@@ -129,7 +129,7 @@ docker build -t nginx-alpine .
 ```bash
 docker run -d --name nginx-alpine -p 8082:80 nginx-alpine
 ```
-![Run Container](./Images/image![alt text](image.png)9.png)
+![Run Container](./Images/image9.png)
 
 
 **Observations**
@@ -149,7 +149,7 @@ docker images nginx-alpine
 
 <hr>
 
-<h4 align="center"> Part 4: Image Size and Layer Comparison <h4>
+<h4 align="center"> Part 4: Image Size and Layer Comparison </h4>
 
 <hr>
 
@@ -194,7 +194,7 @@ docker history nginx-alpine
 
 <hr>
 
-<h4 align="center"> Part 5: Functional Tasks Using NGINX <h4>
+<h4 align="center"> Part 5: Functional Tasks Using NGINX </h4>
 
 <hr>
 
@@ -237,7 +237,7 @@ _Example use cases:_
 
 <hr>
 
-<h4 align="center"> Part 6: Comparison Summary <h4>
+<h4 align="center"> Part 6: Comparison Summary </h4>
 
 <hr>
 
@@ -258,7 +258,7 @@ _Example use cases:_
 
 <hr>
 
-<h4 align="center"> Part 7: When to Use What <h4>
+<h4 align="center"> Part 7: When to Use What </h4>
 
 <hr>
 
@@ -285,9 +285,5 @@ _Example use cases:_
 <hr>
 
 <div align="center">
-
-| | | |
-|:--|:--:|--:|
-| <a href="../Experiment-2/Readme.md">⬅️ Previous</a> | <a href="../../Lab/Readme.md">⌂ Home | |
 
 </div>
