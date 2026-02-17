@@ -17,9 +17,7 @@ This repository documents my hands-on learning and experiments in
 - [Experiment 2 – Nginx & Containers](./LAB/Experiment-2/Readme.md)
 - [Experiment 3 – Nginx Base Image Comparison](./LAB/Experiment-3/Readme.md)
 
-
 ---
-
 
  # 📚 Theory Classes
 
