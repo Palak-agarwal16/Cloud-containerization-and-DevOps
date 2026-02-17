@@ -21,7 +21,7 @@ This repository documents my hands-on learning and experiments in
 ---
 
 
- ## 📚 Theory Classes
+ # 📚 Theory Classes
 
 - [Class 4 – Java App using Dockerfile](./THEORY/class4/Readme.md)
 
