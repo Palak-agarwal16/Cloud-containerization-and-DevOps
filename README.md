@@ -19,9 +19,10 @@ This repository documents my hands-on learning and experiments in
 
 ---
 
- # 📚 Theory Classes
+ ## 📚 Theory Classes
 
 - [Class 4 – Java App using Dockerfile](./THEORY/class4/Readme.md)
+- [Class 6 – Docker Hub Image Deployment ](./THEORY/class6/Readme.md)
 
 ---
 
