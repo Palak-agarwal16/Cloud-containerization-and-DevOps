@@ -25,9 +25,9 @@ This repository documents my hands-on learning and experiments in
 - [Class 6 – Docker Hub Image Deployment ](./THEORY/class6/Readme.md)
 - [Class 7 – Docker API ](./THEORY/class7/Readme.md)
 - [Class 8 – Expose Docker API on Linux / WSL  ](./THEORY/class8/Readme.md)
-- [Class 14 – Docker Networking Practical (Bridge & Host Mode) ](./THEORY/class14/Readme.md)
 - [Class 9test – Making python app image ](./THEORY/class9test/Readme.md) 
-      
+- [Class 14 – Docker Networking Practical (Bridge & Host Mode) ](./THEORY/class14/Readme.md)
+ 
 ---
 
 
