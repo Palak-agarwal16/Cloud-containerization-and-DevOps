@@ -2,7 +2,7 @@
 
 This repository documents my hands-on learning and experiments in  
 **Cloud Computing, Containerization, and DevOps**.
-- [repo link](https://github.com/Palak-agarwal16/Cloud-containerization-and-DevOps)
+- [Repository link](https://github.com/Palak-agarwal16/Cloud-containerization-and-DevOps)
 
 ---
 
