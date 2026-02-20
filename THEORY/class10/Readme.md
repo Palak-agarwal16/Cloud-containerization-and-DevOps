@@ -52,5 +52,4 @@ docker run -it cprogram
 
 C program running
 
-![run](image5.png)
 
