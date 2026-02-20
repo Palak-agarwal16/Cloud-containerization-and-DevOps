@@ -9,6 +9,7 @@ This repository documents my hands-on learning and experiments in
 ## 👤 Student Details
 - **Name:** Palak Agarwal  
 - **SAP ID:** 500123673  
+- **BATCH:** 2
 
 ---
 
