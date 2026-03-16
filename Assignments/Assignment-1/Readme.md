@@ -4,7 +4,7 @@
 
 <h4 align="center"> Pre-requisite </h4>
 
-![Directory Structure](./Images/0.png)
+![Directory Structure](image0.png)
 
 <hr>
 
