@@ -12,7 +12,8 @@ This repository documents my hands-on learning and experiments in
 - **BATCH:** 2
 
 ---
-
+## Assignments 
+-[Assignment1 - Containerized Web Application with PostgreSQL using Docker Compose and Macvlan/Ipvlan](./Assignments/Assignment-1/Readme.md)
 ## 🧪 Lab Experiments
 
 - [Experiment 1 – Docker Basics](./LAB/Experiment-1/Readme.md)
