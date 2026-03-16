@@ -4,7 +4,7 @@
 
 <h4 align="center"> Pre-requisite </h4>
 
-![Directory Structure](image0.png)
+![Directory Structure](./Images/0.png)
 
 <hr>
 
@@ -12,18 +12,18 @@
 ```bash
 npm init -y
 ```
-![Initialize Node Package](image1.png)
+![Initialize Node Package](./Images/1.png)
 
 
 **Step-2:- Install Necessary Package**
 ```bash
 npm i express pg
 ```
-![Install Package](image2.png)
+![Install Package](./Images/2.png)
 
 
 **Step-3:- The `package.json` will look as follows:-**
-![package.json](image3.9.png)
+![package.json](./Images/3.png)
 
 
 **Step-4:- The `server.js` will look as follows:-**
@@ -78,7 +78,7 @@ app.listen(3000, "0.0.0.0", () => {
   console.log("Server running on port 3000");
 });
 ```
-![server.js](image3.png)
+![server.js](./Images/4.png)
 
 
 **Step-5:- The backend/`Dockerfile` will look as follows:-**
@@ -109,7 +109,7 @@ EXPOSE 3000
 
 CMD ["node", "src/server.js"]
 ```
-![Dockerfile of backend](image4.png)
+![Dockerfile of backend](./Images/5.png)
 
 
 **Step-6:- The `.dockerignore` will look as follows:-**
@@ -120,7 +120,7 @@ Dockerfile
 .git
 .gitignore
 ````
-![dockerignore](image5.png)
+![dockerignore](./Images/6.png)
 
 
 **Step-7:- The database/`Dockerfile` will look as follows:-**
@@ -129,7 +129,7 @@ FROM postgres:15-alpine
 
 COPY init.sql /docker-entrypoint-initdb.d/
 ```
-![Dockerfile](image6.png)
+![Dockerfile](./Images/7.png)
 
 
 **Step-8:- The `init.sql` will look as follows:-**
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS users(
     name TEXT
 );
 ```
-![init.sql](image7.png)
+![init.sql](./Images/8.png)
 
 
 **Step-9:- The `docker-compose.yml` will look as follows:-**
@@ -198,14 +198,14 @@ networks:
   macvlan_net:
     external: true
 ```
-![docker-compose.yml](image8.png)
+![docker-compose.yml](./Images/9.png)
 
 
 **Step-10:- Find your interface**
 ```bash
 ip a
 ```
-![Find Interface](image9.png)
+![Find Interface](./Images/10.png)
 
 
 **Step-11:- Create Network**
@@ -216,26 +216,26 @@ docker network create -d macvlan \
   -o parent=eth0 \
   macvlan_net
 ```
-![Create Network](image10.png)
+![Create Network](./Images/11.png)
 
 
 **Step-12:- Build from Compose**
 ```bash
 docker-compose up build --no-cache
 ```
-![Build Compose](image11.png)
+![Build Compose](./Images/12.png)
 
 
 **Step-13:- Start Services**
 ```bash
 docker-compose up -d
 ```
-![Start Service](image12.png)
+![Start Service](./Images/13.png)
 
 
 **Step-14:- Insert A User in DB in API**
 ```bash
-curl -X POST http://192.168.50.20:3000/users \
+curl -X POST http://localhost:3000/users \
 -H "Content-Type: application/json" \
 -d '{"name":"palak"}'
 ```
@@ -246,54 +246,54 @@ curl -X POST http://192.168.50.20:3000/users \
 ```bash
 curl http://localhost:3000/users
 ```
-![Get User API](image14.png)
+![Get User API]
 
 
 **Step-16:- List Running Container**
 ```bash
 docker ps
 ```
-![List Containers](image13.png)
+![List Containers](./Images/16.png)
 
 
 **Step-17:- List Volumes**
 ```bash
 docker volume ls 
 ```
-![List Volumes](image15.png)
+![List Volumes](./Images/17.png)
 
 
 **Step-18:- Inspect Network**
 ```bash
 docker network inspect macvlan_net
 ```
-![Inspect Network](image16.png)
+![Inspect Network](./Images/18.png)
 
 
 **Step-19:- Inspect Backend Container**
 ```bash
 docker inspect node_backend
 ```
-![Inspect Backend](image18.png)
+![Inspect Backend](./Images/19.png)
 
 
 **Step-20:- Inspect DB**
 ```bash
 docker inspect postgres_db
 ```
-![Inspect DB](image19.png)
+![Inspect DB](./Images/20.png)
 
 
 **Step-21:- Verify Data Persistence**
 This step will verify that data stored in DB is permanently saved irrespective of the state of the container.
 ```bash
 docker-compose down
-(image20.png)
+(./Images/21.png)
 docker-compose up -d
-![Restart Compose](image21.png)
+![Restart Compose](./Images/22.png)
 curl http://localhost:3000/users
 ```
-![Run API](image22.png)
+![Run API](./Images/23.png)
 
 
 
