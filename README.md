@@ -34,7 +34,7 @@ This repository documents my hands-on learning and experiments in
 - [Class 10 – Making C program image ](./THEORY/class10/Readme.md)
 - [Class 14 – Docker Networking Practical (Bridge & Host Mode) ](./THEORY/class14/Readme.md)
 - [Class 17 – Docker Swarm & Overlay Network Communication  ](./THEORY/class17/Readme.md)
--[Class 20 –  Docker NGINX & Container Management Guide ](./THEORY/class20/Readme.md)
+- [Class 20 –  Docker NGINX & Container Management Guide ](./THEORY/class20/Readme.md)
 - [Class 21 – Docker Swarm ](./THEORY/class21/Readme.md)
 
 
