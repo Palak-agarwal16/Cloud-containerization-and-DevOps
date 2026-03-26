@@ -11,7 +11,11 @@
 
 ```bash
 kubectl run apache-pod --image=httpd
+kubectl get pods
+kubectl describe pod apache-pod
 ```
+![create, run and Inspect Pod](image1.png)
+
 
 
 *Explanation:-*
@@ -22,26 +26,8 @@ kubectl run apache-pod --image=httpd
 
 ---
 
-**Step-2: Verify Pod**
 
-```bash
-kubectl get pods
-```
-
-
----
-
-**Step-3: Inspect Pod**
-
-```bash
-kubectl describe pod apache-pod
-```
-
-![create, run and Inspect Pod](image1.png)
-
----
-
-**Step-4: Access Application**
+**Step-2: Access Application**
 
 ```bash
 kubectl port-forward pod/apache-pod 8081:80
@@ -57,7 +43,7 @@ http://localhost:8081
 
 ---
 
-**Step-5: Delete Pod**
+**Step-3: Delete Pod**
 
 ```bash
 kubectl delete pod apache-pod
@@ -72,54 +58,36 @@ kubectl delete pod apache-pod
 
 ---
 
-**Step-6: Create Deployment**
+**Step-4: Create Deployment**
 
 ```bash
 kubectl create deployment apache --image=httpd
-```
-
-
-
----
-
-**Step-7: Verify Deployment**
-
-```bash
 kubectl get deployments
 kubectl get pods
 ```
-
 ![ Create and Verify Deployment](image4.png)
+
+
+
 
 ---
 
-**Step-8: Expose Deployment**
+
+
+**Step-5: Expose Deployment**
 
 ```bash
 kubectl expose deployment apache --port=80 --type=NodePort
-```
-
-
-
----
-
-**Step-9: Access Service**
-
-```bash
 kubectl port-forward service/apache 8082:80
 ```
-
-Open:
-
-```
-http://localhost:8082
-```
-
 ![Expose Service and Service Output](image5.png)
+
+
 
 ---
 
-**Step-10: Scale Deployment**
+
+**Step-6: Scale Deployment**
 
 ```bash
 kubectl scale deployment apache --replicas=2
@@ -134,7 +102,7 @@ kubectl scale deployment apache --replicas=2
 
 ---
 
-**Step-11: Debugging Scenario**
+**Step-7: Debugging Scenario**
 
 ```bash
 kubectl set image deployment/apache httpd=wrongimage
@@ -148,7 +116,7 @@ kubectl set image deployment/apache httpd=wrongimage
 
 ---
 
-**Step-12: Fix Application**
+**Step-8: Fix Application**
 
 ```bash
 kubectl set image deployment/apache httpd=httpd
@@ -158,7 +126,7 @@ kubectl set image deployment/apache httpd=httpd
 
 ---
 
-**Step-13: Exec into Pod**
+**Step-9: Exec into Pod**
 
 ```bash
 kubectl exec -it <pod-name> -- /bin/bash
@@ -172,7 +140,7 @@ ls /usr/local/apache2/htdocs
 
 ---
 
-**Step-14: Self-Healing**
+**Step-10: Self-Healing**
 
 ```bash
 kubectl delete pod <pod-name>
