@@ -21,6 +21,7 @@ This repository documents my hands-on learning and experiments in
 - [Experiment 2 – Nginx & Containers](./LAB/Experiment-2/Readme.md)
 - [Experiment 3 – Nginx Base Image Comparison](./LAB/Experiment-3/Readme.md)
 - [Experiment 4 – Docker Essentials](./LAB/Experiment-4/Readme.md)
+- [Experiment 5 – Docker - Volumes, Environment Variables, Monitoring & Networks*](./LAB/Experiment-5/Readme.md)
 
 ---
 

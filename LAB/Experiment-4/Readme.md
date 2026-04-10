@@ -13,7 +13,7 @@
 mkdir my-flask-app
 cd my-flask-app
 ```
-![Create Directory](image1.png)
+![Create container](image1.png)
 
 **Step-2:- Create an **`app.py`:****
 ```python
