@@ -1,38 +1,32 @@
-## **Lab Experiment 7: CI/CD using Jenkins, GitHub and Docker Hub**
+# Lab Experiment 7: CI/CD using Jenkins, GitHub and Docker Hub
 
-## **1. Aim**
+## 1. Aim
+To design and implement a complete CI/CD pipeline using Jenkins, integrating source code from GitHub, and building & pushing Docker images to Docker Hub.
 
-To design and implement a complete CI/CD pipeline using **Jenkins**, integrating source code from **GitHub**, and building & pushing Docker images to **Docker Hub**.
+## 2. Introduction
+CI/CD stands for Continuous Integration and Continuous Deployment. It automates the process of building, testing, and deploying applications. Tools like Jenkins, GitHub, and Docker Hub help in creating a complete pipeline for efficient software delivery.
 
+## 3. CI/CD Pipeline Architecture
+Developer → GitHub → Jenkins → Docker Build → Docker Hub
 
-## **5. Part A: GitHub Repository Setup (Source Code + Build Definition)**
+## 4. Part A: GitHub Repository Setup (Source Code + Build Definition)
 
-
-### **5.1 Create Repository**
-
+### 4.1 Create Repository
 Create a repository on GitHub:
-
-```id="mgl4e5"
 my-app
-```
+
 ![alt text](image1.png)
 
-### **5.2 Project Structure**
-
-```id="w6t8l9"
+### 4.2 Project Structure
 my-app/
 ├── app.py
 ├── requirements.txt
 ├── Dockerfile
 ├── Jenkinsfile
-```
 
+### 4.3 Application Code
 
-### **5.3 Application Code**
-
-#### `app.py`
-
-```python id="6nxjv6"
+app.py
 from flask import Flask
 app = Flask(__name__)
 
@@ -42,20 +36,15 @@ def home():
     #return "Hello from CI/CD Pipeline!, my sapid is 123456"
 
 app.run(host="0.0.0.0", port=80)
-```
+
 ![alt text](image2.png)
 
-#### `requirements.txt`
-
-```id="n6glcz"
+requirements.txt
 flask
-```
+
 ![alt text](image3.png)
 
-
-### **5.4 Dockerfile (Build Process)**
-
-```dockerfile id="g5x5v2"
+### 4.4 Dockerfile (Build Process)
 FROM python:3.10-slim
 
 WORKDIR /app
@@ -65,16 +54,10 @@ RUN pip install -r requirements.txt
 
 EXPOSE 80
 CMD ["python", "app.py"]
-```
+
 ![alt text](image4.png)
 
-
-
-
-
-### **5.5 Jenkinsfile (Pipeline Definition in GitHub)**
-
-```groovy id="cnbm2o"
+### 4.5 Jenkinsfile (Pipeline Definition in GitHub)
 pipeline {
     agent any
 
@@ -111,19 +94,12 @@ pipeline {
         }
     }
 }
-```
+
 ![alt text](image5.png)
 
+## 5. Part B: Jenkins Setup using Docker (Persistent Configuration)
 
----
-
-
-## **6. Part B: Jenkins Setup using Docker (Persistent Configuration)**
-
-
-### **6.1 Create Docker Compose File**
-
-```yaml id="xkpxh6"
+### 5.1 Create Docker Compose File
 version: '3.8'
 
 services:
@@ -141,170 +117,98 @@ services:
 
 volumes:
   jenkins_home:
-```
+
 ![alt text](image6.png)
 
-
-
-### **6.2 Start Jenkins**
-
-```bash id="x6cim3"
+### 5.2 Start Jenkins
 docker-compose up -d
-```
+
 ![alt text](image7.png)
 
 Access:
-
-
-```id="d66b1p"
 http://localhost:8080
-```
 
-
-### **6.3 Unlock Jenkins**
-
-```bash "
+### 5.3 Unlock Jenkins
 docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
-```
+
 ![alt text](image8.png)
 
+### 5.4 Initial Setup
+- Install suggested plugins
+- Create admin user
 
+## 6. Part C: Jenkins Configuration
 
-
-### **6.4 Initial Setup**
-
-* Install suggested plugins
-* Create admin user
-
-
----
-
-
-
-## **7. Part C: Jenkins Configuration**
-
-
-
-### **7.1 Add Docker Hub Credentials**
-
-Path:
-
-```
-
-```
-
-* Type: Secret Text
-* ID: `dockerhub-token`
-* Value: Docker Hub Access Token
+### 6.1 Add Docker Hub Credentials
+- Type: Secret Text
+- ID: dockerhub-token
+- Value: Docker Hub Access Token
 
 ![alt text](image9.png)
 
-### **7.2 Create Pipeline Job**
-
-1. New Item → Pipeline
-2. Name: `ci-cd-pipeline`
-
-Configure:
-
-```id="36zqyf"
+### 6.2 Create Pipeline Job
 Pipeline script from SCM
-```
+- SCM: Git
+- Repo URL: your GitHub repo
+- Script Path: Jenkinsfile
 
-* SCM: Git
-* Repo URL: your GitHub repo
-* Script Path: `Jenkinsfile`
-
-
----
 ![alt text](image10.png)
 
+## 7. Part D: Trigger Mechanism (Manual Execution)
+In this experiment, the pipeline was triggered manually from Jenkins dashboard.
 
-
-## **## 8. Part D: Trigger Mechanism (Manual Execution)
----
-
-In this experiment, the pipeline was triggered manually from the Jenkins dashboard instead of using a GitHub webhook.
-
-Steps followed:
-
+Steps:
 1. Open Jenkins Dashboard
-2. Select pipeline job (ci-cd-pipeline)
-3. Click on **Build Now**
-4. Jenkins starts pipeline execution
-
-Although webhook integration enables full automation, manual triggering was used successfully for demonstrating CI/CD workflow.
----
+2. Select pipeline job
+3. Click Build Now
+4. Pipeline executes
 
 ![alt text](image11.png)
 
+## 8. Part E: Execution Flow (Stage-wise)
 
-
-
-
-
-## **9. Part E: Execution Flow (Stage-wise Explanation)**
-
-
-
-### **Stage 1: Code Push**
-
-* Developer updates code in GitHub
+Stage 1: Code Push
+Developer updates code in GitHub
 
 ![alt text](image12.png)
 
-### **Stage 2:Triggering **
-
-* GitHub sends event to Jenkins
+Stage 2: Triggering
+GitHub sends event to Jenkins
 
 ![alt text](image13.png)
 
+Stage 3: Jenkins Pipeline Execution
 
-### **Stage 3: Jenkins Pipeline Execution**
+Clone Stage:
+Pulls latest code from GitHub
 
-#### **Stage: Clone**
-
-* Pulls latest code from GitHub
 ![alt text](image14.png)
 
+Build Stage:
+Docker builds image
 
-#### **Stage: Build**
-
-* Docker builds image using Dockerfile
 ![alt text](image15.png)
 
+Auth Stage:
+Jenkins logs into Docker Hub
 
-#### **Stage: Auth**
-
-* Jenkins logs into Docker Hub using stored token
 ![alt text](image16.png)
 
+Push Stage:
+Image pushed to Docker Hub
 
-#### **Stage: Push**
-
-* Image pushed to Docker Hub
 ![alt text](image17.png)
 
-
-### **Stage 4: Artifact Ready**
-
-* Docker image available globally
+Stage 4: Artifact Ready
+Docker image available globally
 
 ![alt text](image18.png)
 
-
-```
 /var/run/docker.sock
-```
 
 ![alt text](image19.png)
 
----
-
----
-
-## **1. Basic Pipeline Structure**
-
-```groovy
+## 9. Basic Pipeline Structure
 pipeline {
     agent any
 
@@ -316,23 +220,22 @@ pipeline {
         }
     }
 }
-```
 
-## **Jenkins pipeline stages showing structured execution flow.
 ![alt text](image20.png)
 
-## **Jenkinsfile defining CI/CD pipeline stages using declarative syntax.
 ![alt text](image21.png)
 
-## **dockerhub-token
 ![alt text](image22.png)
 
----
+## 10. Key Takeaways
+- pipeline → stages → stage → steps defines structure
+- sh executes shell commands
+- git fetches code
+- withCredentials secures secrets
+- secrets are protected and temporary
 
-## **11. Key Takeaways**
+## 11. Result
+CI/CD pipeline executed successfully. Docker image built and pushed to Docker Hub.
 
-* `pipeline → stages → stage → steps` = structure
-* `sh` = run commands
-* `git` = fetch code
-* `withCredentials` = securely use secrets
-* Secrets are **temporary and protected**
+## 12. Conclusion
+Successfully implemented CI/CD pipeline using Jenkins, GitHub, and Docker Hub. Automation improved efficiency and reduced manual effort.
