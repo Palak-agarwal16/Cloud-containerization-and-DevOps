@@ -22,18 +22,17 @@ docker run -d \
   --restart unless-stopped \
   nginx:alpine
 ```
-
+![alt text](image1.png)
 ---
 
 ### 2.2 Docker Compose (Declarative Approach)
 
 Docker Compose uses a YAML file (`docker-compose.yml`) to define services, networks, and volumes in a structured format.
 
-Instead of multiple `docker run` commands, a single command is used:
-
 ```bash
 docker compose up -d
 ```
+![alt text](image2.png)
 
 Compose is **declarative**, meaning you define the desired state of the application.
 
@@ -54,22 +53,11 @@ services:
       NGINX_HOST: localhost
     restart: unless-stopped
 ```
+![alt text](image3.png)
 
 ---
 
 ## 3. Mapping: Docker Run vs Docker Compose
-
-| Docker Run Flag     | Docker Compose Equivalent        |
-| ------------------- | -------------------------------- |
-| `-p 8080:80`        | `ports:`                         |
-| `-v host:container` | `volumes:`                       |
-| `-e KEY=value`      | `environment:`                   |
-| `--name`            | `container_name:`                |
-| `--network`         | `networks:`                      |
-| `--restart`         | `restart:`                       |
-| `--memory`          | `deploy.resources.limits.memory` |
-| `--cpus`            | `deploy.resources.limits.cpus`   |
-| `-d`                | `docker compose up -d`           |
 
 ---
 
@@ -85,7 +73,9 @@ Example:
 
 ```bash
 docker compose up --scale web=3
+
 ```
+![alt text](image4.png)
 
 ---
 
@@ -110,6 +100,7 @@ Verify:
 ```bash
 docker ps
 ```
+![alt text](image5.png)
 
 Access:
 
@@ -123,6 +114,7 @@ Stop and remove container:
 docker stop lab-nginx
 docker rm lab-nginx
 ```
+![alt text](image6.png)
 
 ---
 
@@ -142,25 +134,26 @@ services:
     volumes:
       - ./html:/usr/share/nginx/html
 ```
-
+![alt text](image7.png)
 Run:
 
 ```bash
 docker compose up -d
 ```
+![alt text](image8.png)
 
 Verify:
 
 ```bash
 docker compose ps
 ```
-
+![alt text](image9.png)
 Stop:
 
 ```bash
 docker compose down
 ```
-
+![alt text](image10.png)
 ---
 
 ## Task 2: Multi-Container Application
@@ -181,7 +174,7 @@ Deploy WordPress with MySQL using:
 ```bash
 docker network create wp-net
 ```
-
+![alt text](image11.png)
 2. Run MySQL:
 
 ```bash
@@ -192,6 +185,7 @@ docker run -d \
   -e MYSQL_DATABASE=wordpress \
   mysql:5.7
 ```
+![alt text](image12.png)
 
 3. Run WordPress:
 
@@ -204,6 +198,7 @@ docker run -d \
   -e WORDPRESS_DB_PASSWORD=secret \
   wordpress:latest
 ```
+![alt text](image13.png)
 
 Test:
 
@@ -242,38 +237,21 @@ services:
 volumes:
   mysql_data:
 ```
-
+![alt text](image14.png)
 Run:
 
 ```bash
 docker compose up -d
 ```
 
+![alt text](image15.png)
 Stop:
 
 ```bash
 docker compose down -v
 ```
-
+![alt text](image16.png)
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # PART C – CONVERSION & BUILD-BASED TASKS
@@ -293,6 +271,7 @@ docker run -d \
   --restart unless-stopped \
   node:18-alpine
 ```
+![alt text](image17.png)
 
 ---
 
@@ -315,7 +294,7 @@ docker run -d \
    ```bash
    docker compose ps
    ```
-
+![alt text](image18.png)
 ---
 
 ## Problem 2: Volume + Network Configuration
@@ -325,6 +304,7 @@ docker run -d \
 ```bash
 docker network create app-net
 ```
+![alt text](image19.png)
 
 ```bash
 docker run -d \
@@ -335,6 +315,7 @@ docker run -d \
   -v pgdata:/var/lib/postgresql/data \
   postgres:15
 ```
+![alt text](image20.png)
 
 ```bash
 docker run -d \
@@ -346,6 +327,8 @@ docker run -d \
   -e DB_PASS=secret \
   python:3.11-slim
 ```
+![alt text](image21.png)
+
 
 ---
 
@@ -359,7 +342,8 @@ docker run -d \
    * Uses `depends_on`
 2. Bring up services using one command.
 3. Stop and remove everything properly.
-
+![alt text](image22.png)
+![alt text](image23.png)
 ---
 
 ## Task 4: Resource Limits Conversion
@@ -375,7 +359,8 @@ docker run -d \
   --restart always \
   nginx:alpine
 ```
-
+![alt text](image24.png)
+![alt text](image25.png)
 ---
 
 ### Student Task:
@@ -393,13 +378,11 @@ docker run -d \
    * When `deploy` works
    * Difference between normal Compose mode and Swarm mode
 
+![alt text](image26.png)
+![alt text](image27.png)
 ---
 
 # PART D – USING DOCKERFILE INSTEAD OF STANDARD IMAGE
-
-Now increase difficulty.
-
-Instead of using prebuilt images like:
 
 ```yaml
 image: node:18-alpine
@@ -410,6 +393,8 @@ Students must:
 * Create their own Dockerfile
 * Build image using Compose
 * Run container from that build
+![alt text](image28.png)
+
 
 ---
 
@@ -421,13 +406,16 @@ You are given:
 
 ```bash
 docker run -d -p 3000:3000 node:18-alpine
+
 ```
+![alt text](image31.png)
 
 Now instead of directly using `node:18-alpine`, you must:
 
 1. Create a simple Node.js app
 2. Write a Dockerfile
 3. Use Docker Compose `build:` option
+
 
 ---
 
@@ -440,7 +428,7 @@ http.createServer((req, res) => {
   res.end("Docker Compose Build Lab");
 }).listen(3000);
 ```
-
+![alt text](image29.png)
 ---
 
 ### Step 2: Create `Dockerfile`
@@ -456,7 +444,7 @@ EXPOSE 3000
 
 CMD ["node", "app.js"]
 ```
-
+![alt text](image32.png)
 ---
 
 ### Step 3: Create `docker-compose.yml`
@@ -473,7 +461,7 @@ services:
     ports:
       - "3000:3000"
 ```
-
+![alt text](image30.png)
 ---
 
 ### Student Task:
@@ -483,6 +471,7 @@ services:
    ```bash
    docker compose up --build -d
    ```
+   ![alt text](image33.png)
 2. Verify in browser:
 
    ```
@@ -494,6 +483,24 @@ services:
 
    * `image:`
    * `build:`
+   
+   image:
+image: node:18-alpine
+ Meaning:
+Uses pre-built image from Docker Hub
+No Dockerfile needed
+Faster startup
+ Example use:
+nginx
+mysql
+
+build:
+  context: .
+  dockerfile: Dockerfile
+ Meaning:
+Builds custom image from Dockerfile
+You control app setup
+Used for real applications
 
 ---
 
@@ -508,7 +515,11 @@ Create a simple Python FastAPI or Node production-ready app using:
 * Multi-stage Dockerfile
 * Smaller final image
 * Use Compose to build it
-
+![alt text](image34.png)
+![alt text](image35.png)
+![alt text](image36.png)
+![alt text](image37.png)
+![alt text](image38.png)
 ---
 
 ### Must:
@@ -522,6 +533,7 @@ Create a simple Python FastAPI or Node production-ready app using:
    ```bash
    docker images
    ```
+   ![alt text](image39.png)
 
 
 ---
@@ -536,19 +548,6 @@ To deploy a multi-container application using **Docker Compose**, consisting of:
 * **WordPress (frontend + PHP)**
 * **MySQL database (backend)**
 
-Also:
-
-* Understand container networking & volumes
-* Learn how to scale services
-* Compare with **Docker Swarm** for production deployment
-
-
-### **2. Prerequisites**
-
-* Docker installed
-* Docker Compose (comes with modern Docker)
-* Basic understanding of containers
-
 
 ### **3. Architecture Overview**
 
@@ -562,9 +561,6 @@ User (Browser)
    Persistent Volume (Database Storage)
 ```
 
-* WordPress connects to MySQL using service name (DNS inside Docker network)
-* Data is persisted using volumes
-
 ---
 ## Steps
 
@@ -574,7 +570,7 @@ User (Browser)
 mkdir wp-compose-lab
 cd wp-compose-lab
 ```
-
+![alt text](image40.png)
 ---
 
 ### **Step 2: Create docker-compose.yml**
@@ -615,45 +611,21 @@ volumes:
   db_data:
   wp_data:
 ```
-
+![alt text](image41.png)
 ---
 
-### **Explanation of Key Sections**
 
-#### **services**
-
-Defines containers:
-
-* `db` → MySQL database
-* `wordpress` → application
 
 #### **depends_on**
 
 * Ensures DB starts before WordPress
-
-#### **environment**
-
-* Used to configure DB credentials and connection
-
-#### **volumes**
-
-* Persist data even if containers are deleted
-
-#### **ports**
-
-* Exposes WordPress on:
-
-  ```
-  http://localhost:8080
-  ```
-
 
 ### **Step 3: Start Application**
 
 ```bash
 docker-compose up -d
 ```
-
+![alt text](image42.png)
 What happens:
 
 * Images are pulled
@@ -668,6 +640,7 @@ What happens:
 ```bash
 docker ps
 ```
+![alt text](image43.png)
 
 Expected:
 
@@ -683,15 +656,12 @@ Open browser:
 http://localhost:8080
 ```
 
-* Complete WordPress setup
-* Enter site title, admin user, password
-
-
 ### **Step 6: Check Volumes**
 
 ```bash
 docker volume ls
 ```
+![alt text](image44.png)
 
 * `db_data` → database persistence
 * `wp_data` → WordPress files
@@ -702,6 +672,7 @@ docker volume ls
 ```bash
 docker-compose down
 ```
+![alt text](image45.png)
 
 * Containers removed
 * Volumes remain intact
@@ -716,7 +687,7 @@ docker-compose down
 ```bash
 docker-compose up --scale wordpress=3
 ```
-
+![alt text](image46.png)
 Result:
 
 * 3 WordPress containers running
@@ -759,7 +730,7 @@ Then configure load balancing manually.
 ```bash
 docker swarm init
 ```
-
+![alt text](image47.png)
 
 
 ### **Step 2: Deploy Stack**
@@ -767,6 +738,7 @@ docker swarm init
 ```bash
 docker stack deploy -c docker-compose.yml wpstack
 ```
+![alt text](image48.png)
 
 
 ### **Step 3: Scale Service**
@@ -774,21 +746,11 @@ docker stack deploy -c docker-compose.yml wpstack
 ```bash
 docker service scale wpstack_wordpress=3
 ```
+![alt text](image49.png)
 
 
-### **What Changes in Swarm?**
 
-| Feature         | Docker Compose | Docker Swarm       |
-| --------------- | -------------- | ------------------ |
-| Scope           | Single host    | Multi-node cluster |
-| Scaling         | Manual         | Built-in           |
-| Load balancing  | No             | Yes (internal LB)  |
-| Self-healing    | No             | Yes                |
-| Rolling updates | No             | Yes                |
-| Networking      | Basic          | Overlay network    |
-
-
-## **7. Benefits of Docker Swarm**
+## **4. Benefits of Docker Swarm**
 
 * Built-in load balancing
 * Automatic container restart (self-healing)
@@ -797,15 +759,10 @@ docker service scale wpstack_wordpress=3
 * Service abstraction (not individual containers)
 
 
-## **8. Challenges / Limitations of Swarm**
-
-* Less popular than Kubernetes
-* Limited ecosystem
-* Less flexible scheduling
-* Fewer enterprise features
 
 
-## **9. Key Learning Outcomes**
+
+## **5. Key Learning Outcomes**
 
 * Multi-container apps require orchestration
 
@@ -822,7 +779,7 @@ docker service scale wpstack_wordpress=3
 
 ---
 
-## **10. Conclusion**
+## **6. Conclusion**
 
 This experiment demonstrated:
 

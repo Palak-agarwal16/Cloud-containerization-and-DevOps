@@ -6,4 +6,5 @@ All the Experiments of Lab are as Follow...
 [Experiment-3](./Experiment-3/Readme.md)
 [Experiment-4](./Experiment-4/Readme.md)
 [Experiment-5](./Experiment-5/Readme.md)
+[Experiment-6](./Experiment-6/Readme.md)
 [Experiment-7](./Experiment-7/Readme.md)
