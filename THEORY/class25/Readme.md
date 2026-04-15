@@ -101,6 +101,7 @@ git log --oneline --graph --all
 The commits from the `feature` branch were integrated into `main`. The `git log` now displays a merged history.
 
 ![Screenshot 14 - Checkout main](image14.png)
+
 ![Screenshot 15 - Merge feature](image15.png)
 ![Screenshot 16 - Final Git log](image16.png)
 
