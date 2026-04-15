@@ -41,6 +41,7 @@ This repository documents my hands-on learning and experiments in
 - [Class 21 – Docker Swarm ](./THEORY/class21/Readme.md)
 - [Class 23assignment –  Kubernetes Apache Web App](./THEORY/class23assignment/Readme.md)
 - [Class 24 – Docker GUI Management with Portainer](./THEORY/class24/Readme.md)
+- [Class 25 – Git Basics: Initialization, Commits, Branching, and Merging](./THEORY/class25/Readme.md)
 
 ---
 
