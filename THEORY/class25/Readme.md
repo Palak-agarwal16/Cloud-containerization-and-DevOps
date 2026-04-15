@@ -50,11 +50,13 @@ git diff
 git status
 git commit -am "test3 modified"
 ```
-![Screenshot 6 - test3](iamge6.png)
-![Screenshot 7 - git log ](iamge7.png)
-![Screenshot 8 - git modified ](iamge8.png)
-![Screenshot 9 - git status ](iamge9.png)
-![Screenshot 10 - git diff ](iamge10.png)
+![Screenshot 6 - test3](image6.png)
+
+![Screenshot 7 - git log ](image7.png)
+![Screenshot 8 - git modified ](image8.png)
+![Screenshot 9 - git status ](image9.png)
+![Screenshot 10 - git diff ](image10.png)
+
 **Observation:**
 Changes made to previously tracked files were reviewed using `git diff` and then committed directly.
 
@@ -73,7 +75,7 @@ git switch feature
 
 # Or: git checkout -b feature
 ```
-![Screenshot 11 - git branch feature ](iamge11.png)
+![Screenshot 11 - git branch feature ](image11.png)
 
 **Observation:**
 A new branch `feature` was created and checked out. A new characteristic `feature.txt` was added to this branch.
