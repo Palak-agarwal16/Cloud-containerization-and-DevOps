@@ -40,6 +40,7 @@ This repository documents my hands-on learning and experiments in
 - [Class 20 –  Docker NGINX & Container Management Guide ](./THEORY/class20/Readme.md)
 - [Class 21 – Docker Swarm ](./THEORY/class21/Readme.md)
 - [Class 23assignment –  Kubernetes Apache Web App](./THEORY/class23assignment/Readme.md)
+- [Class 24 – Docker GUI Management with Portainer](./THEORY/class24/Readme.md)
 
 ---
 
