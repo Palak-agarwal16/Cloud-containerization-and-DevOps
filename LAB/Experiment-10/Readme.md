@@ -213,7 +213,7 @@ mvn sonar:sonar -Dsonar.login=YOUR_TOKEN
 
 
 **Step-12:- On Browser test will be Listed**
-![List Test](./Images/12.png)
+![List Test](image12.png)
 
 
 **Step-13:- View Report**
