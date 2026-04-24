@@ -24,6 +24,7 @@ This repository documents my hands-on learning and experiments in
 - [Experiment 5 – Docker - Volumes, Environment Variables, Monitoring & Networks*](./LAB/Experiment-5/Readme.md)
 - [Experiment 6 – Comparison of Docker Run and Docker Compose](./LAB/Experiment-6/Readme.md)
 - [Experiment 7 – CI/CD using Jenkins, GitHub and Docker Hub](./LAB/Experiment-7/Readme.md)
+- [Experiment 9 –Working with Ansible](./LAB/Experiment-9/Readme.md)
 - [Experiment 10 – Working with SonarQube](./LAB/Experiment-10/Readme.md)
 
 
