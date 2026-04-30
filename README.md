@@ -27,7 +27,7 @@ This repository documents my hands-on learning and experiments in
 - [Experiment 9 –Working with Ansible](./LAB/Experiment-9/Readme.md)
 - [Experiment 10 – Working with SonarQube](./LAB/Experiment-10/Readme.md)
 - [Experiment 11 – Orchestration via Docker Swarm](./LAB/Experiment-11/Readme.md)
-
+- [Experiment 12 –  Kubernetes ](./LAB/Experiment-12/Readme.md)
 
 ---
 
