@@ -196,7 +196,6 @@ cat inventory.ini
 ssh -i ~/.ssh/id_rsa root@172.17.0.3 
 ```
 ![Test Connectivity](image14.png)
-****
 
 **Step-15:- Ansible Ping Test**
 ```bash
